@@ -11,9 +11,9 @@
 @import './modules/header/_nav';
 @import './modules/header/_navbar';
 @import './modules/header/_wrapper';
-@import './modules/header/_drop-down-meu';
-@import './modules/header/_navsubmenu';
-@import './modules/header/_DropDownBox';
+@import './modules/header/_dropDownMenu';
+@import './modules/header/_navSubMenu';
+@import './modules/header/_dropDownBox';
 // ########## Hero ##########
 @import './modules/hero/hero';
 // ########## Promo ##########
@@ -25,8 +25,45 @@
 @import './modules/calender/content';
 @import './modules/calender/events';
 @import './modules/calender/arrow';
+// ########## Whatshappen ##########
+@import './modules/Whatshappen/Whatshappen';
 // ########## Gallery ##########
 @import './modules/gallery/gallery';
 // ########## Footer ##########
 @import './modules/footer/footer';
 
+// ########## Career ##########
+@import './modules/career/career';
+@import './modules/News/news';
+// ########## Junior ##########
+@import './modules/junior/junior';
+
+// ########## Middle ##########
+@import './modules/middle/middle';
+
+// ########## Photo Gallery ##########
+@import './modules/photogallery/photogallery';
+
+// ########## Staff ##########
+@import './modules/staff/staff';
+
+// ########## Achievers ##########
+@import './modules/achievers/achievers';
+@import './modules/achievers/firstHeading';
+@import './modules/achievers/portion1';
+@import './modules/achievers/portion2';
+
+// ########## Events ##########
+@import './modules/events/events';
+
+// ########## Contact ##########
+@import './modules/contact/contact';
+
+// ########## Policies ##########
+@import './modules/policies/policies';
+
+// ########## Discover ##########
+@import './modules/discover/discover';
+
+// ########## Our School ##########
+@import './modules/ourschool/ourschool';

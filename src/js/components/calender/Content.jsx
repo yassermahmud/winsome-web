@@ -1,7 +1,7 @@
 import React from 'react';
 import Arrow from './Arrow';
 import Event from './Event';
-export default class Content extends React.Component{
+ export default class Content extends React.Component{
 	constructor(){
 		super();
 	}
@@ -11,12 +11,13 @@ export default class Content extends React.Component{
 				<div className="line"></div>
 				<h2><strong>Up Coming Events</strong></h2>
 				<div className="renderEvents">
-						<Event {...this.props}/>
+						<Event />
 				</div>
+				<div className="clear"></div>
 				<Arrow
-				{...this.props}
 				 />
 			</div>
 		)
 	}
 }
+

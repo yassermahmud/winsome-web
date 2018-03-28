@@ -1,13 +1,16 @@
 import React from 'react';
+import {
+  Link,
+} from 'react-router-dom';
 
 
 
 const DropDownMenu = (props)=> {
 	let {data2,func1,func2,styles}=props
-	data2=data2.split(' ')
+	console.log(styles)
 	let mydata=data2.map((item,index)=>{
 		return (
-			<a  key={index} >{item}</a>			
+			<Link to={item.addressValue} key={index} >{item.value}</Link>		
 		)
 	})
 		return (

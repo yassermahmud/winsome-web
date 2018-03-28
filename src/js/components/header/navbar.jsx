@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import NavSubmenu from './navsubmenu';
-import dataArray from './dataGiver';
+import NavSubmenu from './NavSubMenu';
+import {
+  Link,
+} from 'react-router-dom';
 
 
-const Navbar = ()=>{
-	var dataToRender = dataArray[1].data.map((item,i)=> {
-		return	<NavSubmenu key={i} 
-		data={dataArray[1].data[i]} 
-		data2={dataArray[1].dataDropDown[i]} 
-		styles={dataArray[1].styles[i]}/>
-	})
-	return (
-	<div className='my-navbar'>
-		{dataToRender}
-	</div>	
-	)
+export default class Navbar extends Component {
+  render() {
+    let { dataArray } = this.props;
+    console.log(dataArray[1].dataNavbar[0].adressValue)
+    var dataToRender = dataArray[1].dataNavbar.map((item,i)=> {
+      return	(
+        <NavSubmenu 
+          key={i} 
+          data={
+                  <Link to={dataArray[1].dataNavbar[i].addressValue}>
+                    {dataArray[1].dataNavbar[i].value}
+                  </Link>
+                }
+          data2={dataArray[1].dataNavbar[i].dropDownMenu}
+          styles={dataArray[1].dataNavbar[i].styles}
+        />
+      )
+    })
+    return(
+      <div className='my-navbar'>
+        {dataToRender}
+      </div>
+    );
+  }
 }
-
-export default Navbar

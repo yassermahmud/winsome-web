@@ -9,7 +9,7 @@
       @include wrapper($wrapper-width);
       padding-top: 30px;
       .junior-school-heading {
-        @include H4(center, $black);
+        @include H3(center, $black);
       }
       .junior-school-description {
         @include P(center, $black);
@@ -31,6 +31,8 @@
       padding-top: 30px;
       .junior-school-gallery-container {
         position: relative;
+        display: inline-block;
+        margin-left: calc(500px/2);
         top: -150px;
         .junior-school-left-image {
           @include junior-school-image(350px, 200px, $background-image-color, './images/junior-school-left.jpg', relative, 0px, 0px);
