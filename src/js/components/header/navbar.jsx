@@ -9,13 +9,13 @@ import {
 export default class Navbar extends Component {
   render() {
     let { dataArray } = this.props;
-    console.log(dataArray[1].dataNavbar[0].adressValue)
+    //console.log(dataArray[1].dataNavbar[0].adressValue)
     var dataToRender = dataArray[1].dataNavbar.map((item,i)=> {
       return	(
         <NavSubmenu 
           key={i} 
           data={
-                  <Link to={dataArray[1].dataNavbar[i].addressValue}>
+                  <Link className='navbar-main-anchors' to={dataArray[1].dataNavbar[i].addressValue}>
                     {dataArray[1].dataNavbar[i].value}
                   </Link>
                 }
