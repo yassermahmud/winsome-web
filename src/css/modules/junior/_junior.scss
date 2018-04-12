@@ -4,9 +4,9 @@
   margin: 0;
   padding: 0;
   .junior {
-    width: 70%;
+    width: 75%;
     padding: 15px 50px 30px 60px;
-    //margin: 5%;
+    float: left;
     .box {
       background-color: $accent-color;
       width: 20px;
@@ -20,6 +20,10 @@
       padding-top:  1% ;
       padding-bottom:  3% ;
       width: 70%;
+      @media (max-width:768px) {
+        width:100%;
+     }
+     
     }
     
   }
@@ -68,6 +72,10 @@
       padding-top:  1% ;
       padding-bottom:  3% ;
       width: 70%;
+      @media (max-width:768px) {
+        width:100%;
+        
+      }
     }
   }
 }

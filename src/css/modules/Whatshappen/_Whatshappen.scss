@@ -1,128 +1,168 @@
-
-
+$career-resp-screen: 768px;
 
 //scss start
 
-#sec-2{
-    height: 730px;
+#sec-2 {
+    height: 800px;
     @include image('../images/chem-formula-pattern.jpg');
-    margin-top:20px;
+    padding: 60px 0 0 0;
 
-    
-    .wraper{
-        @include wrapper(1200px);
-        
-        
-        .des{
-            width: 600px;
-            margin:0 auto;
-            
-            
-            h2{
-                font-size: 40px;
-                margin:0px;
-                font-weight: lighter;
+    .wraper {
+        @include wrapper(90%);
+        padding: 0 10px 50px 10px;
+        //border:1px red solid;
+
+        .des {
+            //width: 80%;
+            margin: 0 auto;
+            //background-color: grey;
+
+            h2 {
+                font-size: 25px;
+                margin: 0px;
+                font-weight: 700;
                 text-align: center;
-                padding:60px 0px 40px 0px;
-                box-sizing:border-box;
+                padding: 40px 0px 35px 0px;
+                box-sizing: border-box;
+                @media only screen and (min-width: $career-resp-screen) {
+                    font-size: 40px;
+                    padding: 60px 0px 40px 0px;
+                    font-weight: 600;
+                }
             }
-            
-            
-            span{
-                
+
+            span {
                 text-align: center;
                 display: block;
-                font-size: 20px;
-                font-weight: bold;
-                padding-bottom: 30px;
-            }
-            
-            
-        }
-        
-        .whatshappen{
-
-               height: 480px;
-               width: 480px;
-               float: left;
-               margin-left: 20px;
-               border:1px $accent-color solid; 
-               box-sizing:border-box;
-
-                .img{
-                       
-                       height: 280px;
-                       width: 478px;
-
-                       overflow: hidden;
-                       img{
-                       height: 280px;
-                       width: 478px; 
-                       object-fit:cover;
-                       &:hover{
-                       height: 300px;
-                       width: 490px;
-                       }
-
-                       }   
+                font-size: 16px;
+                font-weight: lighter;
+                padding-bottom: 35px;
+                @media only screen and (min-width: $career-resp-screen) {
+                    font-size: 20px;
                 }
-                .img-des{
-                    
-                    height: 198px;
-                    width: 478px;
-                    padding:15px;
-                    box-shadow: 0px 5px 8px $accent-color;
-                    background-color: white;
-                    box-sizing:border-box;
-                    h3{
-                        margin:0px;
-                        color:$primary-color;
-                        font-family: $font-family;
-                    }
-                    p{
-                        padding-top:20px;
-                        font-size: 18px;
-                        text-align: justify;
-                        letter-spacing: 1px;
-                        color:black;
-                        font-family: $font-family;
+            }
+        }
 
+        .slide-show {
+            height: 540px;
+            //background-color: lightblue;
+            clear: both;
+            width: 100%;
 
+            .arrows {
+                width: 8%;
+                height: 480px;
+                //background-color: green;
+                display: inline-block;
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+
+            .arrow {
+                border-top: 2px $secondary-color solid;
+                border-left: 2px $secondary-color solid;
+                display: inline-block;
+                height: 50px;
+                width: 50px;
+                margin: 210px 0;
+                margin-left: 15px;
+                cursor: pointer;
+                &:focus {
+                    outline: 0;
+                }
+                &:active {
+                    outline: 0;
+                }
+                @media only screen and (min-width: $career-resp-screen) {
+                    height: 60px;
+                    width: 60px;
+                }
+            }
+            .previous {
+                transform: rotate(-45deg);
+            }
+            .next {
+                transform: rotate(135deg);
+                float: right;
+                margin-right: 15px;
+            }
+
+            .whatsHappen-card {
+                width: 84%;
+                height: 480px;
+                float: left;
+                .wh-normal-view {
+                    display: none;
+                    @media only screen and (min-width: $career-resp-screen) {
+                        display: block;
+                        margin: 0 auto;
                     }
                 }
-        
-        }
-       
-        
-        
-        .arrows{
-            height:480px;
-            width:80px;
-            display:inline-block;
-            float: left;
-            margin-left: 10px;
+                .wh-responsive-view {
+                    display: block;
+                    margin: 0 auto;
+                    @media only screen and (min-width: $career-resp-screen) {
+                        display: none;
+                    }
+                }
 
-            .arrow{
-            border-top:2px $secondary-color solid;
-            border-left:2px $secondary-color solid;
-            display:inline-block;
-            height:80px;
-            width:80px;
-            margin:210px 0;
-            margin-left:15px;
-            cursor: pointer;
-            }
+                .whatshappen {
+                    height: 480px;
+                    width: 80%;
+                    border: 1px $accent-color solid;
+                    box-sizing: border-box;
+                    margin: 0 auto;
+                    @media only screen and (min-width: $career-resp-screen) {
+                        width: 48%;
+                        margin: 0;
+                    }
+                    .img {
+                        height: 280px;
+                        width: 100%;
 
-            .previous{
-            transform: rotate(-45deg);
+                        overflow: hidden;
+                        img {
+                            height: 280px;
+                            width: 100%;
+                            object-fit: cover;
+                            &:hover {
+                                height: 330px;
+                                width: 115;
+                            }
+                        }
+                    }
+                    .img-des {
+                        height: 198px;
+                        width: 100%;
+                        padding: 15px 15px 0 15px;
+                        box-shadow: 0px 5px 8px $accent-color;
+                        background-color: white;
+                        box-sizing: border-box;
+                        h3 {
+                            margin: 0px;
+                            color: $primary-color;
+                            font-family: $font-family;
+                        }
+                        p {
+                            padding-top: 18px;
+                            font-size: 18px;
+                            text-align: justify;
+                            color: black;
+                            font-family: $font-family;
+                        }
+                    }
+                }
             }
-            .next{
-            transform: rotate(135deg);
-            margin-left: -15px;
-            
+            .card-0 {
+                float: left;
             }
-           
+            .card-1 {
+                float: right;
+            }
         }
-       
     }
 }

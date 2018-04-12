@@ -1,5 +1,6 @@
 // ########## Import Dependencies Here ##########
-import React, { Component } from 'react';
+import React from 'react';
+import { shape, arrayOf, string } from 'prop-types';
 import { connect } from 'react-redux';
 
 // ########## Import Screens Here ##########
@@ -7,28 +8,32 @@ import { connect } from 'react-redux';
 // ########## Import Components Here ##########
 import WinsomeSchool from './WinsomeSchool';
 import JuniorSchool from './JuniorSchool';
-import { promoData } from './promoData';
 
-export class Promo extends Component {
-  render() {
-    let { promoData } = this.props;
-    return (
-      <div>
-        <WinsomeSchool 
-          promoData={promoData}
-          id={promoData[0].id}
-        />
-        <JuniorSchool />
-        <WinsomeSchool 
-          promoData={promoData}
-          id={promoData[1].id}
-        />
-      </div>
-    );
-  }
+
+const Promo = (props) => {
+  const { promoData } = props;
+  return (
+    <div>
+      <WinsomeSchool
+        promoData={promoData}
+        id={promoData[0].id}
+      />
+      <JuniorSchool />
+      <WinsomeSchool
+        promoData={promoData}
+        id={promoData[1].id}
+      />
+    </div>
+  );
 }
 
-function mapStateToProps({promoData}) {
+Promo.propTypes = {
+  promoData: arrayOf(shape({
+    id: string.isRequired
+  })).isRequired
+}
+
+function mapStateToProps({ promoData }) {
   return {
     promoData
   }
