@@ -4,27 +4,21 @@
 	float: left;
 	.firstPart {
 		width: 60%;
-		height: 500px;
-		margin: 5.5% auto auto 6.5%;
+		height: 200px;
+		margin: 50px auto auto 30px;
 		float: left;
-		@media (max-width: 747px) {
+		@media (max-width: 768px) {
 			width: 80%;
 		}
-		h2 {
-			font-size: 20px;
-			margin: 0px;
-			font-weight: bold;
+		.h2 {
+			@include H3('', $black);
+			font-size: 30px;
+			@media only screen and (max-width: 768px) {
+				font-size: 24px;
+			}
 		}
 		.box {
-			width: 13px;
-			height: 13px;
-			background-color: yellow;
-			margin-top: 5%;
-			margin-left: 0.5%;
-			@media (max-width: 747px) {
-				width: 9px;
-				height: 9px;
-			}
+			@include heading-icon();
 		}
 		p {
 			text-align: justify;

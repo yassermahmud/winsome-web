@@ -1,5 +1,6 @@
 .head {
-	background-color: lightgrey;
+	background-color: $secondary-background-color;
+	border-top: 10px $heading-icon-color solid;
 	h2 {
 		font-size: 28px;
 		font-weight: bold;
@@ -10,23 +11,26 @@
 		letter-spacing: 0.48px;
 	}
 	.box {
-		margin: 3% 0 3% 0;
-		background-color: yellow;
-		width: 18px;
-		height: 18px;
+		@include heading-icon();
 	}
 	.school {
 		width: 70%;
 		float: left;
 		padding: 5%;
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
 		p {
 			width: 83%;
 		}
 	}
 	.col1 {
 		width: 60%;
-		float: left;	
+		float: left;
 		padding: 5%;
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
 		.mission {
 			padding-top: 15%;
 		}
@@ -35,9 +39,12 @@
 		width: 40%;
 		float: left;
 		padding: 5%;
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
 	}
 	.board {
-		.honor{
+		.honor {
 			text-decoration: underline;
 			margin: 0;
 		}
@@ -53,10 +60,35 @@
 		p {
 			margin: 2% 0 0 2%;
 		}
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
 	}
 }
 .head::after {
-    content: "";
-    clear: both;
-    display: block;
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.News-container {
+	//float: right;
+	position: absolute;
+	right: 0;
+	width: 25%;
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		bottom: 0;
+		position: relative;
+	}
+}
+.news-hide{
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+.news-hide-2{
+	@media only screen and (min-width: 768px) {
+		display: none;
+	}
 }

@@ -4,11 +4,12 @@ import Discover from '../discover/Discover';
 import Hero from '../hero/HeroImage';
 
 export default class career extends Component {
+  componentDidMount() {}
   render() {
     return (
       <div>
-        <Hero style="header-image" />
-        <div className="career">
+        <Hero style="career-img" />
+        <div id="career">
           <div className="content-1">
             <div className="content-box">
               <h3>Working at Winsome </h3>
@@ -51,7 +52,7 @@ export default class career extends Component {
                 <p>Upload Your Resume</p>
                 <p>Drag & Drop file here, or click button below.</p>
                 <div className="upload-btn">
-                  <button>Upload File</button>
+                  <button className="upload-file-btn">Upload File</button>
                 </div>
               </div>
 
@@ -68,7 +69,7 @@ export default class career extends Component {
                 <input type="text" placeholder="Phone Landline" />
                 <input type="text" placeholder="Phone Mobile" />
                 <input type="text" placeholder="Email" />
-                <button>Submit</button>
+                <button className="career-submit-button">Submit</button>
               </form>
             </div>
           </div>
@@ -77,7 +78,9 @@ export default class career extends Component {
             <News />
           </div>
         </div>
-        <Discover />
+        <div className="clear">
+          <Discover />
+        </div>
       </div>
     );
   }

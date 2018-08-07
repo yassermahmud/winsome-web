@@ -1,12 +1,10 @@
+import { Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import { func, bool, shape, string } from 'prop-types';
 import { connect } from 'react-redux';
 import { getUserAction, getPassAction, loginAction } from '../../actions';
 
-import Menu from './Menu';
-import Hero from '../hero/HeroImage';
-
-class SignIn extends Component {
+export class SignIn extends Component {
 	constructor() {
 		super();
 
@@ -31,13 +29,10 @@ class SignIn extends Component {
 
 		return loginData.usermatch ? (
 			<div>
-				<Hero style={'hero-image'} />
-				<Menu />
+				<Redirect to="/dashboard" />
 			</div>
 		) : (
 			<div>
-				<Hero style={'hero-image'} />
-
 				<div className="user-signin">
 					<div className="wraper">
 						<div className="login-box">

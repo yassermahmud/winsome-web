@@ -3,27 +3,27 @@ import { number, func, array, shape } from 'prop-types';
 import { connect } from 'react-redux';
 import WhatsHappen from './whatshappen';
 import {
-  nextView,
-  previousView,
-  nextRespView,
-  previousRespView
+  nextViewToSaga,
+  previousViewToSaga,
+  initialBlogViewToSaga
 } from '../../actions';
 
-class Blog extends React.Component {
+export class Blog extends React.Component {
   constructor() {
     super();
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
   }
 
-  next() {
-    this.props.nextView();
-    this.props.nextRespView();
+  componentDidMount() {
+    this.props.initialBlogViewToSaga();
   }
 
+  next() {
+    this.props.nextViewToSaga();
+  }
   previous() {
-    this.props.previousView();
-    this.props.previousRespView();
+    this.props.previousViewToSaga();
   }
   createNormalView() {
     const { viewData } = this.props;
@@ -55,6 +55,7 @@ class Blog extends React.Component {
           <div className="slide-show">
             <div className="arrows left">
               <div
+                id="previous"
                 className="arrow previous"
                 onClick={this.previous}
                 onKeyPress={() => {}}
@@ -65,6 +66,7 @@ class Blog extends React.Component {
 
             <div className="arrows right">
               <div
+                id="next"
                 className="arrow next"
                 onClick={this.next}
                 onKeyPress={() => {}}
@@ -85,21 +87,20 @@ class Blog extends React.Component {
     );
   }
 }
+
 Blog.propTypes = {
-  nextView: func,
-  previousView: func,
-  nextRespView: func,
-  previousRespView: func,
+  nextViewToSaga: func,
+  previousViewToSaga: func,
+  initialBlogViewToSaga: func,
   viewData: shape({
     selectedView: array,
     firstIndexofSelectedView: number
   })
 };
 Blog.defaultProps = {
-  nextView: null,
-  previousView: null,
-  nextRespView: null,
-  previousRespView: null,
+  nextViewToSaga: null,
+  previousViewToSaga: null,
+  initialBlogViewToSaga: null,
   viewData: null
 };
 function mapStateToProps({ viewData }) {
@@ -109,8 +110,7 @@ function mapStateToProps({ viewData }) {
 }
 
 export default connect(mapStateToProps, {
-  nextView,
-  previousView,
-  nextRespView,
-  previousRespView
+  nextViewToSaga,
+  previousViewToSaga,
+  initialBlogViewToSaga
 })(Blog);

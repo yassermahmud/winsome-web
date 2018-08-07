@@ -1,12 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
-import Discover from "../discover/Discover";
-import Hero from "../hero/HeroImage";
-import News from "../News/News";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Discover from '../discover/Discover';
+import Hero from '../hero/HeroImage';
+import News from '../News/News';
 
 export const Junior = ({ juniorData }) => (
-  <div>
-    <Hero style={"header-image"} />
+  <div id="junior">
+    <Hero style={'junior-img'} />
     <div className="container">
       <div className="junior">
         <h2>{juniorData.p1.heading}</h2>
@@ -16,7 +17,6 @@ export const Junior = ({ juniorData }) => (
           <img src="./images/junior1.jpg" width="90%" alt="Junior1" />
         </div>
       </div>
-      <News />
       <div className="creating">
         <h2>{juniorData.p2.heading}</h2>
         <div className="box" />
@@ -38,7 +38,12 @@ export const Junior = ({ juniorData }) => (
         <p>{juniorData.p3.text}</p>
       </div>
     </div>
-    <Discover />
+    <div className="junior-news">
+      <News />
+    </div>
+    <div className="clear">
+      <Discover />
+    </div>
   </div>
 );
 
@@ -47,5 +52,9 @@ function mapStateToProps({ juniorData }) {
     juniorData
   };
 }
+
+Junior.propTypes = {
+  juniorData: PropTypes.isRequired
+};
 
 export default connect(mapStateToProps, null)(Junior);
