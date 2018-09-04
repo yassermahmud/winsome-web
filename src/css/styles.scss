@@ -1,6 +1,9 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 
+@import './modules/header/_hamburgerSettings.scss';
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+
 @import './partials/variables';
 @import './partials/mixins';
 @import './partials/globals';
@@ -78,3 +81,7 @@
 @import './modules/Senior/Senior';
 // ########## DASHBOARD ##########
 @import './modules/dashboard/dashboard';
+
+// ########## Spinner ##########
+@import './modules/spinner/_spinner';
+

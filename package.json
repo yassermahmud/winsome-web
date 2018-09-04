@@ -5,14 +5,23 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js",
     "prod": "webpack --config webpack.config.prod.js -p",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "ICBootcamp",
   "license": "MIT",
   "description": "React Project",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "^3.3.7",
+    "express": "^4.16.3",
+    "gmail-send": "^1.2.14",
+    "hamburgers": "^0.9.3",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.7",
+    "passport": "^0.4.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

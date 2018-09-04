@@ -2,11 +2,20 @@ import React from 'react';
 import Discover from '../discover/Discover';
 import News from '../News/News';
 import Hero from '../hero/HeroImage';
+import axios from 'axios'
 
 export default class Contact extends React.Component {
   constructor() {
     super();
-    this.state = { value: '' };
+    this.state = {
+      sending: false,
+      value: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,10 +23,60 @@ export default class Contact extends React.Component {
     this.setState({ value: e.target.value });
   }
   handleSubmit(e) {
-    alert(`Form is submitted:  ${this.state.value}`);
     e.preventDefault();
+    console.log(this.state, 'test')
+    this.setState({
+      sending: true
+    })
+    axios.post('/contact', {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      subject: this.state.subject,
+      message: this.state.message
+    }).then(function(response) {
+      console.log('done')
+      this.setState({
+        sending: false
+      })
+    }.bind(this))
+  }
+  handleFirstName(e) {
+    this.setState({
+      firstName: e.target.value
+    });
+  }
+  handleLastName(e) {
+    this.setState({
+      lastName: e.target.value
+    });
+  }
+  handleEmail(e) {
+    this.setState({
+      email: e.target.value
+    });
+  }
+  handleSubject(e) {
+    this.setState({
+      subject: e.target.value
+    });
+  }
+  handleMessage(e) {
+    this.setState({
+      message: e.target.value
+    });
   }
   render() {
+    var submit;
+    if (this.state.sending) {
+      submit = (<div className="lds-ripple"><div></div><div></div></div>)
+    } else {
+      submit = (
+        <button type="submit" className="contact-submit-btn">
+          Submit
+        </button>
+      )
+    }
     return (
       <div id="contact">
         <Hero style={'contact-img'} />
@@ -63,26 +122,19 @@ export default class Contact extends React.Component {
                 <div className="yellowBox" />
                 <form
                   className="userInfo"
-                  value={this.state.value}
-                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit.bind(this)}
                 >
-                  <input type="text" placeholder="First Name" />
+                  <input type="text" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstName.bind(this)} />
                   <br />
-                  <input type="text" placeholder="Last Name" />
+                  <input type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastName.bind(this)} />
                   <br />
-                  <input type="text" placeholder="Email" />
+                  <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleEmail.bind(this)} />
                   <br />
-                  <input type="text" placeholder="Subject" />
+                  <input type="text" placeholder="Subject" value={this.state.subject} onChange={this.handleSubject.bind(this)} />
                   <br />
-                  <textarea placeholder="Message" />
+                  <textarea placeholder="Message" value={this.state.message} onChange={this.handleMessage.bind(this)} />
                   <br />
-                  <button
-                    value={this.state.value}
-                    onSubmit={this.handleSubmit}
-                    className="contact-submit-btn"
-                  >
-                    Submit
-                  </button>
+                  {submit}
                 </form>
               </div>
             </div>

@@ -5,6 +5,7 @@ var PurifyCSSPlugin= require('purifycss-webpack');
 
 module.exports = {
   entry: [
+    'babel-polyfill', // used because of generator
     './src/js/index.jsx',
     './src/css/styles.scss'
   ],
@@ -77,11 +78,11 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '../css/styles.css'
     }),
-    new PurifyCSSPlugin({
-      paths: glob.sync([
-        path.join(__dirname, 'dist/index.html'),
-        path.join(__dirname, 'src/js/*.js')
-      ])
-    })
+    // new PurifyCSSPlugin({
+    //   paths: glob.sync([
+    //     path.join(__dirname, 'dist/index.html'),
+    //     path.join(__dirname, 'src/js/*.js')
+    //   ])
+    // })
   ]
 };

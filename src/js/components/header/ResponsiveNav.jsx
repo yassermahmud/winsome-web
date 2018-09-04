@@ -17,7 +17,7 @@ class ResponsiveNav extends React.Component {
 		if (!this.state.invisibleClass) {
 			this.setState({
 				invisibleClass: 'new-responsive-class',
-				addingCross: 'added-class-for-making-cross'
+				addingCross: 'is-active'
 			});
 		} else {
 			this.setState({
@@ -37,14 +37,29 @@ class ResponsiveNav extends React.Component {
 					src="./images/logo.png"
 					alt="header logo is not available"
 				/>
+				{
+				// <div
+				// 	className={`responsive-nav ${this.state.addingCross}`}
+				// 	onClick={this.visible}
+				// 	onKeyPress={this.visible}
+				// 	role="button"
+				// 	tabIndex="0"
+				// >
+				// 	<div className="responsive-nav-lines" />
+				// </div>
+				}
 				<div
-					className={`responsive-nav ${this.state.addingCross}`}
+					className="responsive-nav"
 					onClick={this.visible}
 					onKeyPress={this.visible}
 					role="button"
 					tabIndex="0"
 				>
-					<div className="responsive-nav-lines" />
+					<div className={`hamburger hamburger--elastic ${this.state.addingCross}`}>
+					  <div className="hamburger-box">
+					    <div className="hamburger-inner" />
+					  </div>
+					</div>
 				</div>
 				<ResponsiveNavbar
 					data={data}

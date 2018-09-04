@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class News extends Component {
 	componentDidMount() {}
@@ -31,10 +32,14 @@ export default class News extends Component {
 							<h3>Resource center</h3>
 						</div>
 						<div className="des-box box-3">
-							<h3>Winsome Gallery</h3>
+							<Link to="photo-galleries">
+								<h3>Winsome Gallery</h3>
+							</Link>
 						</div>
 						<div className="des-box box-4">
-							<h3>Annual Achievers</h3>
+							<Link to="annual-achievers">
+								<h3>Annual Achiever</h3>
+							</Link>
 						</div>
 					</div>
 				</div>

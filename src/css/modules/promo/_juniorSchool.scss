@@ -35,14 +35,14 @@
         justify-content: space-around;
         top: -15rem;
         .junior-school-left-image {
-          @include junior-school-image(350px, 200px, $background-image-color, './images/junior-school-left.jpg', relative, 0px, 0px);
+          @include junior-school-image(350px, 200px, $background-image-color, '../images/junior-school-left.jpg', relative, 0px, 0px);
           // @media only screen and (max-width : 940px) and (min-width : 768px){
           //   left: -200px;
           // }
           align-self: flex-start;
         }
         .junior-school-middle-image {
-          @include junior-school-image(350px, 350px, $background-image-color, './images/junior-school-middle.jpg', absolute, 245px, -50px);
+          @include junior-school-image(350px, 350px, $background-image-color, '../images/junior-school-middle.jpg', absolute, 245px, -50px);
           // @media only screen and (max-width : 940px) and (min-width : 768px){
           //   left: 20px;
           //   top: -40px;
@@ -50,7 +50,7 @@
           align-self: center;
         }
         .junior-school-right-image {
-          @include junior-school-image(350px, 200px, $background-image-color, './images/junior-school-right.jpg', relative, 0px, 0px);
+          @include junior-school-image(350px, 200px, $background-image-color, '../images/junior-school-right.jpg', relative, 0px, 0px);
           // @media only screen and (max-width : 940px) and (min-width : 768px){
           //   left: -100px;
           // }
@@ -86,7 +86,7 @@
             display: none;
           }
           .junior-school-middle-image {
-            @include junior-school-imageMobile(250px, 250px, $background-image-color, './images/junior-school-middle.jpg', relative, -30px, 10px);
+            @include junior-school-imageMobile(250px, 250px, $background-image-color, '../images/junior-school-middle.jpg', relative, -30px, 10px);
           }
           .junior-school-right-image {
             display: none;
@@ -119,7 +119,7 @@
             display: none;
           }
           .junior-school-middle-image {
-            @include junior-school-imageMobile(180px, 180px, $background-image-color, './images/junior-school-middle.jpg', relative, -10px, 140px);
+            @include junior-school-imageMobile(180px, 180px, $background-image-color, '../images/junior-school-middle.jpg', relative, -10px, 140px);
             display: none;
           }
           .junior-school-right-image {

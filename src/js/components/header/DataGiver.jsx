@@ -29,8 +29,8 @@ const dataArray = [
 				dropDownMenu: [
 					{
 						id: '1',
-						value: '',
-						addressValue: '',
+						value: 'contact',
+						addressValue: 'contact',
 						styles: ''
 					}
 				]
@@ -45,8 +45,8 @@ const dataArray = [
 				dropDownMenu: [
 					{
 						id: '1',
-						value: '',
-						addressValue: '',
+						value: 'career',
+						addressValue: 'career',
 						styles: ''
 					}
 				]
@@ -145,8 +145,8 @@ const dataArray = [
 				dropDownMenu: [
 					{
 						id: '1',
-						value: '',
-						addressValue: '',
+						value: 'home',
+						addressValue: 'home',
 						styles: ''
 					}
 				]
